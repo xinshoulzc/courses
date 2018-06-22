@@ -1,0 +1,10 @@
+*.pdf
+ADS/*.docx
+ADS/*.pages
+CSDI/*.pdf
+CSDI/*.pages
+CSDI/*.docx
+ALgorithm/*
+EAP/
+ML/
+.DS*
