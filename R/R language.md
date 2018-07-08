@@ -1,7 +1,5 @@
 # R language
 
-
-
 ## Basic
 
 - *<-* 赋值 
@@ -173,6 +171,9 @@ print(x[c(-1, -3)]) # [2]
 - `seq(1, 20, by=, length=,along.with=,) # same as :` `seq_along()` `rep(vec, times=,) # replicate` `rep(vec, each=,)`
 - `paste(vec, collapse=,)`, `paste(element1, element2, sep=,)`
 - `rnorm(1000) # 从标准正态分布中抽样1000次形成的vec`, `sample(vec, 100) # 从vec中抽样100次` `sum()`
+- `identical()`
+- `dim() # get矩阵维度或者赋值维度(可将vector转化成matrix)`, `matrix(data, nrow=, ncol=,)`, `cbind() # combine columns 将一列加入matrix注意强制类型转化`, `rbind() # combine row 将一行加入matrix`
+- `data.frame() #将参数组合成data frame`, `colnames() #与dim一致, 看名字知道作用`, `rownames() #与dim一致, 看名字知道作用`
 
 ## Ref
 - [R语言入门指导](https://wklchris.github.io/R-learning-basic.html)
