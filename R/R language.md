@@ -33,7 +33,9 @@
 - <div id="readcsv" />一般通过read.table() read.csv()创建, 当然也可以通过data.frame()来创建
     + data.frame(foo=1:4, bar=c(T,T,F,F))
 - 通过data.matrix() 将data frame 转化成matrix
-- ncol() #返回列数, nrow #返回行数
+- `data[c(1, 2), ]` or `data[, c(1, 3)]`
+- `ncol()` #返回列数, `nrow()` #返回行数, `names()` # 返回header
+- `tail(data, n)` #返回最后n行
 
 ## read write
 
@@ -59,7 +61,7 @@ read.table(file, header, sep, colClasses, nrows, comment.char, skip, stringsAsFa
 # https://www.rdocumentation.org/packages/utils/versions/3.5.0/topics/read.table
 # for large dataset details, please read above doc.
 # file <- 文件路径(string)
-# header <- 是否含有表头(T/F) 即是否含有col.name, 默认TRUE
+# header <- 是否含有表头(T/F) 即是否含有col.name, 默认F
 # sep <- 数据之间的分隔符(string/characters) read.table默认空格, csv默认逗号
 # colClasses <- 表示每列所属的数据类型(其长度与ncol()保持一致)
 # nrows <- 数据行数(not required)
@@ -101,6 +103,23 @@ dimnames(m) <- list(c("a", "b"), c("c", "d"))
 - 在R语言中没有atomic class, 比如`b = 1`其实表示的是一个vector, 其中第一个元素为1, b[[1]]是能够返回1的
 - 矩阵计算 element-wiswe * / + - 
     + 矩阵乘法 %*%
+- data frame 基本操作合集
+```R
+#   Ozone Solar.R Wind Temp Month Day
+# 1    41     190  7.4   67     5   1
+# 2    36     118  8.0   72     6   2
+# 3    12     149 12.6   74     1   3
+# 4    18     313 11.5   62     2   4
+# 5    NA      NA 14.3   56     3   5
+# 取所有Month == 5的行
+data[data$Month == 5,] # or data[data[,5] == 5,]
+data[1][1] # 可以看看结果, 意料之外
+# 取第47行的Wind的数据
+data[47,]$Wind # data[47,][1]
+# 求Ozone列中所有NA的数目
+length(data$Ozone[is.na(data$Ozone)])
+```
+
 
 ### Subset operation
 
