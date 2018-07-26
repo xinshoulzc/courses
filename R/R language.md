@@ -14,14 +14,14 @@
 
 ### data type 
 
-- *atomic class* characters, numberic(与C中double相同), integer(通过整数之后添加L), complex, logical(FALSE, TRUE)
+- *atomic class* characters, numberic(与C中double相同), integer(通过整数之后添加L), complex, logical(FALSE, TRUE, NA)
 - *object* vector 所有元素的基本类型均相同
     + vector("numberic", 10) type, length不赋值采用默认值; [c()](#c())
 - *list* 元素可能存在不同的类型 列表存在索引
 - *factor* 因子变量 用于表示有序或者无序变量的索引
     + table("factor") 统计各个level出现的频率
     + unclass("factor") 去除各个level的标签直接用原始数据来表示
-    + levels参数(factor(..., levels=...))表示对factor设置优先级
+    + levels参数, `factor(..., levels=...)`表示对factor设置优先级
 - *matrix* 矩阵, 所有元素必须具有相同的数据类型
 
 
@@ -36,6 +36,17 @@
 - `data[c(1, 2), ]` or `data[, c(1, 3)]`
 - `ncol()` #返回列数, `nrow()` #返回行数, `names()` # 返回header
 - `tail(data, n)` #返回最后n行
+- `subset(c, name=="mary" & gender=="male", select=c(name, age))` # 返回姓名为mary并且性别为男性的所有行, select表示选中的所有列 `subset(data, is.na(data))`
+
+#### apply函数详解
+> 常用于代替for循环, 基本等同于python中的map函数, 以下仅介绍一些基本方法, 详细的方法请参见Ref
+
+
+- `apply(data, MARGIN, FUN)` MARGIN = 1时表示按行操作 = 2时表示按列操作
+```R
+data <- matrix(1:12, ncol=3)
+apply(data, 1, sum)
+```
 
 ## read write
 
@@ -197,6 +208,7 @@ print(x[c(-1, -3)]) # [2]
 ## Ref
 - [R语言入门指导](https://wklchris.github.io/R-learning-basic.html)
 - [R programming(coursera)](https://www.coursera.org/learn/r-programming/home/welcome)
+- [apply函数参考博客](http://blog.fens.me/r-apply/)
 
 ## 中英文转化表
 

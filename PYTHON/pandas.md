@@ -28,7 +28,6 @@ df_mask = pd.DataFrame('A': [True] * 4, 'B': [False] * 4, 'C': [True False])
 df.where(df_mask, -100)
 ```
 - splitting 与python中切片保持一致
-- 
 
 ## Ref
 [10 Minutes to pandas](http://pandas.pydata.org/pandas-docs/stable/10min.html)
