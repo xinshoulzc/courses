@@ -1,10 +1,23 @@
+# pdf file
 *.pdf
+
+# ADS extra file
 ADS/*.docx
 ADS/*.pages
+ADS/*.png
+
+# CSDI extra file
 CSDI/*.pdf
 CSDI/*.pages
 CSDI/*.docx
-ALgorithm/*
+
+# Algorithm
+Algorithm/*
+
+# EAP material
 EAP/
+
+# machine learning material
 ML/
+
 .DS*
