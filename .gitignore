@@ -20,4 +20,7 @@ EAP/
 # machine learning material
 ML/
 
+# R test file
+R/test.txt
+
 .DS*
