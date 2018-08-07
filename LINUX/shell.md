@@ -71,6 +71,8 @@
     + awk -F'\t' 'END {print}' test.txt # 打印最后一行
     + awk -F'\t' 'NR == 1 {print}' test.txt # 打印第一行
     + awk -F'\t' 'sum[$5]++END{for(i in sum) print i "\t" sum[i]}' test.txt # 统计第5列中所有不同元素出现的次数
+    + `~ ~!` 匹配正则表达式和不匹配正则表达式
+    + awk 分为三个部分 BEGIN{(只在开头执行一次)}, {(循环每行主体)}, END{(只在最后执行一次)}
 - sort 同c++函数sort
 - uniq 去除相同元素, 仅仅保留独立元素, 但是仅仅只对相邻元素进行相同元素的判定
 
@@ -80,3 +82,4 @@
 [expr命令使用技巧](https://blog.csdn.net/adcxf/article/details/3001275)
 [shell中的括号](https://blog.csdn.net/tttyd/artice/details/11742241)
 [awk命令](https://www.cnblogs.com/ggjucheng/archive/2013/01/13/2858470.html)
+[awk运算符](https://www.cnblogs.com/chengmo/archive/2010/10/11/1847515.html)
