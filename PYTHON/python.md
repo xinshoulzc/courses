@@ -36,11 +36,24 @@ f1, f2, f3 = count()
 ### partial function / 偏函数
 
 - 固定函数的部分参数并赋予新的函数名称
-```
+```python
 from functools
 int("12345") # 将字符串转化成整数类型的数据
 
 int2 = functools.partial(int, base=2)
 # def int2(x, base=2)
 #   return int(x, base)
+```
+
+### 给函数参数增加元信息
+
+- 使用函数参数注解
+```python
+# 下面有一个被注解的函数
+def add(x:int, y:int) -> int:
+    return x + y
+```
+```shell
+>>> add.__annotations__
+{'y': <class 'int'>, 'return': <class 'int'>, 'x': <class 'int'>}
 ```
