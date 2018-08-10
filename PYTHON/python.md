@@ -49,7 +49,7 @@ int2 = functools.partial(int, base=2)
 
 - 使用函数参数注解
 ```python
-# 下面有一个被注解的函数
+# 下面有一个被注解的函数 用于表示注释
 def add(x:int, y:int) -> int:
     return x + y
 ```
