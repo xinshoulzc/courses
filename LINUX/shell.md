@@ -75,7 +75,8 @@
     + awk 分为三个部分 BEGIN{(只在开头执行一次)}, {(循环每行主体)}, END{(只在最后执行一次)}
 - sort 同c++函数sort
 - uniq 去除相同元素, 仅仅保留独立元素, 但是仅仅只对相邻元素进行相同元素的判定
-
+- df -h (disk free 从磁盘查看disk使用状况) du -sh ./* (disk used 从目录下查看磁盘的使用状况)
+- 
 
 ## Ref
 [shell脚本教程](http://www.runoob.com/linux/linux-shell.html)
